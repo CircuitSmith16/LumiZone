@@ -58,7 +58,7 @@ void loop() {
     lastDetectedTime = currentTime; // reset timer
   }
 
-  // 1️⃣ Servo control: stays ON for HOLD_TIME after last detection
+  // Servo control: stays ON for HOLD_TIME after last detection
   
   if (currentTime - lastDetectedTime < HOLD_TIME) {
     pos+=2; 
@@ -68,7 +68,7 @@ void loop() {
   }
   
 
-  // 2️⃣ LED control: ON if student detected AND dark
+  // LED control: ON if student detected AND dark
   if ((currentTime - lastDetectedTime < HOLD_TIME) && (ldrValue > LIGHT_THRESHOLD)) {
     digitalWrite(LED_PIN, HIGH); // LED ON
   } else {
